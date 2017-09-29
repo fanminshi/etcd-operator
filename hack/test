@@ -65,6 +65,10 @@ function fmt_pass {
 }
 
 function build_pass {
+	curr_path=$(pwd)
+	cd "${curr_path}/etcd-backup-operator"
+	hack/build
+	cd "${curr_path}"
 	IMAGE=$OPERATOR_IMAGE hack/build/operator/build
 }
 
